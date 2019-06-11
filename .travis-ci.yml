@@ -6,6 +6,7 @@ services:
 env:
   global:
     - ANSIBLE_VERSION=latest
+    - INVENTORY_DRIVER=local
 
 before_install:
   - sudo docker pull ansible/ansible:${ANSIBLE_VERSION}
