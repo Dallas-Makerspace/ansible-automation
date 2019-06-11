@@ -1,0 +1,5 @@
+---
+- hosts: vcc.communitygrid
+  roles: {}
+  tasks: {}
+...
