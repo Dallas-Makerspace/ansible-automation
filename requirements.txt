@@ -1,0 +1,5 @@
+ansible
+ansible-vault
+docker
+WMI
+pywin32
