@@ -1,0 +1,19 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  global:
+    - ANSIBLE_VERSION=latest
+
+before_install:
+  - sudo docker pull ansible/ansible:${ANSIBLE_VERSION}
+  
+script:
+  - docker run -ti -e ANSIBLE_CONFIG=/data/ansible.cfg -v .:/data -w /data ansible/ansible:${ANSIBLE_VERSION} ansible-playbook ${SITE}
+  - exit $exit_code
+
+notifications:
+  email:
+    - infrastructure@dallasmakerspace.org
