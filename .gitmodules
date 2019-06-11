@@ -1,0 +1,3 @@
+[submodule "cmdb"]
+	path = cmdb
+	url = git@github.com:denzuko-devops/cmdb.git
