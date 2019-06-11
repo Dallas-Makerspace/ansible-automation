@@ -1,0 +1,5 @@
+---
+### https://github.com/freeipa/ansible-freeipa/wiki/FreeIPA-Installation-Using-ansible-freeipa
+- name: Install freepia client
+  debug: "Hello world"
+...
