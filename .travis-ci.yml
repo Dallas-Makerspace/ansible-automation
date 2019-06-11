@@ -12,8 +12,7 @@ before_install:
   - sudo docker pull ansible/ansible:${ANSIBLE_VERSION}
   
 script:
-  - docker run -ti -e ANSIBLE_CONFIG=/data/ansible.cfg -v .:/data -w /data ansible/ansible:${ANSIBLE_VERSION} ansible-playbook ${SITE}
-  - exit $exit_code
+  - docker run -ti -e ANSIBLE_CONFIG=/data/ansible.cfg -v .:/data -w /data ansible/ansible:${ANSIBLE_VERSION} "ansible-galaxy install -r requirements.yml && ansible-playbook sites/${TRAVIS_BRANCH}"
 
 notifications:
   email:
